@@ -32,7 +32,7 @@ Hack The One is a hackathon platform where users can register, log in, join tech
 
 ---
 
-✅ To-Do Features (Future Work)
+## ✅ To-Do Features (Future Work)
 
 🛡️ Password Hashing (e.g. with bcrypt)
 
@@ -48,7 +48,7 @@ Hack The One is a hackathon platform where users can register, log in, join tech
 
 ---
 
-🙋‍♂️ Author
+### 🙋‍♂️ Author
 
 hritik 
 
