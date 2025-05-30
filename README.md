@@ -29,3 +29,26 @@ Hack The One is a hackathon platform where users can register, log in, join tech
 
 **Database:**
 - MongoDb
+
+---
+
+✅ To-Do Features (Future Work)
+
+🛡️ Password Hashing (e.g. with bcrypt)
+
+📦 Use Database (e.g. MongoDB) instead of in-memory storage
+
+📧 Email verification
+
+🕵️ Admin Dashboard
+
+🎨 UI Improvements
+
+
+
+---
+
+🙋‍♂️ Author
+
+hritik 
+
