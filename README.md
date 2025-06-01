@@ -44,6 +44,9 @@ Hack The One is a hackathon platform where users can register, log in, join tech
 
 🎨 UI Improvements
 
+## Setup 
+  git clone
+
 
 
 ---
