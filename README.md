@@ -45,7 +45,7 @@ Hack The One is a hackathon platform where users can register, log in, join tech
 🎨 UI Improvements
 
 ## Setup 
-  git clone
+  git clone https://github.com/whoami-hrititk/hack-the-one.git
 
 
 
