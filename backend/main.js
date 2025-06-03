@@ -28,7 +28,8 @@ const authRegister = require('./routes/authRegister');
 const authLogin = require('./routes/authLogin');
 const authLogout = require('./routes/authLogout');
 const homepage = require('./routes/homepage');
-const all_users = require('./users')
+const profile = require('./routes/user');
+const all_users = require('./users');
 
 //landing page route
 app.get('/', (req, res) => {
@@ -43,10 +44,12 @@ app.use('/auth', authRegister);
 app.use('/auth', authLogin);
 
 
-app.use('/api', authLogout);
+app.use('/user', authLogout);
 
 
-app.use('/api', homepage);
+app.use('/user', homepage);
+
+app.use('/user', profile);
 
 app.listen(port, () => {
     console.log("Server listening on port "+port);
