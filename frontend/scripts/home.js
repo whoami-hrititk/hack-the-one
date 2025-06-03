@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     if(homepage){
         console.log("homepage loaded!");
         const options = {method: "POST", headers:{"Content-Type":"application/json"}}
-        const response = await fetch("api/home", options);
+        const response = await fetch("user/home", options);
         const result = await response.json();
 
         if(response.ok && result.user){
