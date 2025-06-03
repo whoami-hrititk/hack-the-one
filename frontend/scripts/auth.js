@@ -1,9 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
-    console.log("register page loaded.");
     const register_btn = document.getElementById("register");
     if(register_btn){
         register_btn.addEventListener("click", async (event) => {
-        console.log("clicked submit btn");
         event.preventDefault();
         const entered_username = document.getElementById('username');
         const entered_pass = document.getElementById('password');
@@ -23,11 +21,37 @@ window.addEventListener("DOMContentLoaded", () => {
         const result = await response.json();
         if(response.ok && result.success){
             console.log("Account created");
+            document.getElementById('message').innerText = result.message;
             window.location.href = "home.html";
         }else{
+            document.getElementById('message').innerText = result.message;
             console.log(result.message);
         }
         
+        });
+    }
+
+    const login_btn = document.getElementById('login');
+    if(login_btn){
+        login_btn.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const options = {method : "POST",
+                             headers : {"Content-Type": "application/json"},
+                             body: JSON.stringify({username, password})
+            }
+            const response = await fetch("/auth/login", options);
+            const result = await response.json();
+            if(response.ok && result.success){
+                document.getElementById('message').innerText = result.message;
+                console.log("User logged in");
+                window.location.href = "home.html";
+            }else{
+                document.getElementById('message').innerText = result.message;
+                console.log(result.message);
+            }
         });
     }
 });
