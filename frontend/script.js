@@ -14,7 +14,6 @@ if(logout){
 
 
 
-
 const signup = document.getElementById("signup");
 
 if(signup){
