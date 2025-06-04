@@ -2,14 +2,16 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const router = express.Router();
 
-const all_users = require('../users');
+const User = require('../models/User');
 
-router.post('/login', (req, res) => {
+
+
+router.post('/login', async (req, res) => {
     const username = req.body.username;
     const pass = req.body.password;
     const saltRound = 10;
 
-    const user = all_users[username];
+    const user = await User.findOne({username: username});
 
     if(!username || !pass){
         return res.status(400).json({message:"Missing Fields", success:false});
@@ -17,7 +19,6 @@ router.post('/login', (req, res) => {
     if(!user){
         return res.status(404).json({message:"User Not found!", success:false});
     }
-    
     bcrypt.compare(pass, user.hashPass, (err, isMatch) => {
         if (err) {
             return res.status(500).json({ message: "Error comparing passwords", success: false });

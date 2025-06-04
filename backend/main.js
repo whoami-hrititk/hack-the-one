@@ -3,7 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const connect_db = require('./db_connect.js');
 
+connect_db();
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -29,7 +31,6 @@ const authLogin = require('./routes/authLogin');
 const authLogout = require('./routes/authLogout');
 const homepage = require('./routes/homepage');
 const profile = require('./routes/user');
-const all_users = require('./users');
 
 //landing page route
 app.get('/', (req, res) => {
